@@ -8,7 +8,9 @@ by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keyb
 %](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![R-CMD-check](https://github.com/hrbrmstr/ggpos/workflows/R-CMD-check/badge.svg)](https://github.com/hrbrmstr/ggpos/actions?query=workflow%3AR-CMD-check)
 [![Linux build
-Status](https://travis-ci.org/hrbrmstr/ggpos.svg?branch=master)](https://travis-ci.org/hrbrmstr/ggpos)  
+Status](https://travis-ci.org/hrbrmstr/ggpos.svg?branch=master)](https://travis-ci.org/hrbrmstr/ggpos)
+[![Coverage
+Status](https://codecov.io/gh/hrbrmstr/ggpos/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/ggpos)
 ![Minimal R
 Version](https://img.shields.io/badge/R%3E%3D-3.6.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -35,6 +37,7 @@ I’ve only tested this on a single, networked EPSON TM-T88V printer.
 ## Installation
 
 ``` r
+remotes::install_github("hrbrmstr/ggpos")
 ```
 
 NOTE: To use the ‘remotes’ install options you will need to have the
