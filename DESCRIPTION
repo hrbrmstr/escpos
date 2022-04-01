@@ -1,24 +1,33 @@
 Package: ggpos
 Type: Package
-Title: ggpos Title Goes Here Otherwise CRAN Checks Fail
+Title: Print {ggplot2} or {grid} Objects to ESC/POS Compatible Network Devices 
 Version: 0.1.0
 Date: 2022-03-31
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
-           comment = c(ORCID = "0000-0001-5670-2640"))
+           comment = c(ORCID = "0000-0001-5670-2640")),
+    person("The", "Working Group", email = "peter@twg.ca", role = "aut",
+           comment = "png2escpos base C code <https://github.com/twg/png2escpos>"
+    )
   )
 Maintainer: Bob Rudis <bob@rud.is>
-Description: A good description goes here otherwise CRAN checks fail.
-URL: https://git.rud.is/hrbrmstr/ggpos
-BugReports: https://git.rud.is/hrbrmstr/ggpos/issues
+Description: ESC/POS devices, such as receipt printers, have the ability to print their own form of
+    raster bitmap graphics. Tools are provided to turn {ggplot2} or {grid} objects into such raster
+    bitmaps and print them to ESC/POS compatible devices.
+URL: https://github.com/hrbrmstr/ggpos
+BugReports: https://github.com/hrbrmstr/ggpos/issues
+SystemRequirements: libpng
 Encoding: UTF-8
-License: AGPL
+License: MIT + file LICENSE
 Suggests:
     tinytest
 Depends:
     R (>= 3.6.0)
 Imports:
-    httr2,
-    jsonlite
+    Rcpp,
+    stringi,
+    ggplot2
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+LinkingTo: 
+    Rcpp
