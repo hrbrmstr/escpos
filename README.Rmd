@@ -23,6 +23,10 @@ The following functions are implemented:
 hrbrpkghelpr::describe_ingredients()
 ```
 
+## NOTE
+
+I've only tested this on a single, networked EPSON TM-T88V printer.
+
 ## Installation
 
 ```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
@@ -38,6 +42,25 @@ library(ggpos)
 packageVersion("ggpos")
 
 ```
+
+```{r ex-01, eval = FALSE}
+ggplot(mtcars) +
+  geom_point(
+    aes(wt, mpg)
+  ) +
+  labs(
+    title = "Test of {ggpos}"
+  ) +
+  theme_ipsum_es(grid="XY") +
+  theme(
+    panel.grid.major.x = element_line(color = "black"),
+    panel.grid.major.y = element_line(color = "black")
+  ) -> gg
+
+ggpos(gg, host_pos = HOSTNAME_OR_IP_ADDRESS_OF_YOUR_PRINTER)
+```
+
+![](man/figures/IMG_0217.png)
 
 ## ggpos Metrics
 
