@@ -23,6 +23,7 @@ png_to_raster <- function(png_file) {
 #' @param port port the ESC/POS compatible device is listening on; defaults to `9100L`
 #' @param scale,width,height,units,dpi,bg same as their [ggplot2::ggsave()] counterparts but with
 #'        sensible defaults for ESC/POS devices.
+#' @param ... other parameters to pass on to [ggplot2::ggsave()]
 #' @export
 ggpos <- function(plot = ggplot2::last_plot(),
                   host_pos,
@@ -32,7 +33,8 @@ ggpos <- function(plot = ggplot2::last_plot(),
                   height = 280,
                   units = "px",
                   dpi = 144,
-                  bg = "white") {
+                  bg = "white",
+                  ...) {
 
   png_file <- tempfile(fileext = ".png")
 
@@ -44,7 +46,8 @@ ggpos <- function(plot = ggplot2::last_plot(),
     height = height,
     units = units,
     dpi = dpi,
-    bg = bg
+    bg = bg,
+    ...
   )
 
   res <- png_to_raster(png_file)
