@@ -15,7 +15,8 @@ ggpos(
   height = 280,
   units = "px",
   dpi = 144,
-  bg = "white"
+  bg = "white",
+  ...
 )
 }
 \arguments{
@@ -27,6 +28,8 @@ ggpos(
 
 \item{scale, width, height, units, dpi, bg}{same as their \code{\link[ggplot2:ggsave]{ggplot2::ggsave()}} counterparts but with
 sensible defaults for ESC/POS devices.}
+
+\item{...}{other parameters to pass on to \code{\link[ggplot2:ggsave]{ggplot2::ggsave()}}}
 }
 \description{
 ESC/POS devices, such as receipt printers, have the ability to print their own form of

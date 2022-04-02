@@ -22,6 +22,8 @@ The following functions are implemented:
 ```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
 hrbrpkghelpr::describe_ingredients()
 ```
+- `ggpos`: Print a ggplot (or other grid object) to an ESC/POS compatible network device with sensible defaults
+
 
 ## NOTE
 
