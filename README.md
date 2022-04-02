@@ -30,6 +30,9 @@ ESC/POS compatible devices.
 
 The following functions are implemented:
 
+-   `ggpos`: Print a ggplot (or other grid object) to an ESC/POS
+    compatible network device with sensible defaults
+
 ## NOTE
 
 I’ve only tested this on a single, networked EPSON TM-T88V printer.
@@ -77,11 +80,11 @@ ggpos(gg, host_pos = HOSTNAME_OR_IP_ADDRESS_OF_YOUR_PRINTER)
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 |:-----|---------:|-----:|----:|-----:|------------:|-----:|---------:|-----:|
 | C++  |        2 | 0.10 | 114 | 0.25 |          53 | 0.25 |       36 | 0.06 |
-| R    |        4 | 0.20 |  54 | 0.12 |          19 | 0.09 |       29 | 0.05 |
+| R    |        4 | 0.20 |  56 | 0.12 |          19 | 0.09 |       30 | 0.05 |
 | YAML |        2 | 0.10 |  35 | 0.08 |          10 | 0.05 |        2 | 0.00 |
-| Rmd  |        1 | 0.05 |  21 | 0.05 |          20 | 0.10 |       33 | 0.06 |
+| Rmd  |        1 | 0.05 |  21 | 0.05 |          21 | 0.10 |       34 | 0.06 |
 | C    |        1 | 0.05 |   0 | 0.00 |           2 | 0.01 |      177 | 0.32 |
-| SUM  |       10 | 0.50 | 224 | 0.50 |         104 | 0.50 |      277 | 0.50 |
+| SUM  |       10 | 0.50 | 226 | 0.50 |         105 | 0.50 |      279 | 0.50 |
 
 clock Package Metrics for ggpos
 
