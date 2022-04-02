@@ -40,7 +40,7 @@ I’ve only tested this on a single, networked EPSON TM-T88V printer.
 ## Installation
 
 ``` r
-remotes::install_github("hrbrmstr/ggpos")
+remotes::install_github("hrbrmstr/ggpos", ref = "batman")
 ```
 
 NOTE: To use the ‘remotes’ install options you will need to have the
