@@ -22,8 +22,7 @@ The following functions are implemented:
 ```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
 hrbrpkghelpr::describe_ingredients()
 ```
-- `ggpos`: Print a ggplot (or other grid object) to an ESC/POS compatible network device with sensible defaults
-
+- `escpos`: Create an `escpos` object for accumulating print commands
 
 ## NOTE
 
@@ -32,7 +31,7 @@ I've only tested this on a single, networked EPSON TM-T88V printer.
 ## Installation
 
 ```{r install-ex, eval = FALSE}
-remotes::install_github("hrbrmstr/ggpos", ref = "batman")
+remotes::install_github("hrbrmstr/escpos", ref = "batman")
 ```
 
 ## Usage

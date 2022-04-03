@@ -1,13 +1,20 @@
-png_to_raster <- function(png_file) {
+#' Convert any png file to ESC/POS raster format
+#'
+#' @param png_file path to PNG file
+#' @param color if `TRUE`, an attempt will be made to dither the result
+#' @return path to a temporary file in ESC/POS raster bitmap format or `""` if an error occurred
+#' @export
+png_to_raster <- function(png_file, color = FALSE) {
 
   png_file <- path.expand(png_file[1])
   out_file <- tempfile()
 
   .Call(
-    "_ggpos_png_to_escpos_raster",
+    "_escpos_png_to_escpos_raster",
     png_file,
     out_file,
-    PACKAGE = "ggpos"
+    color[1],
+    PACKAGE = "escpos"
   )
 
 }
@@ -19,6 +26,7 @@ png_to_raster <- function(png_file) {
 #' [Epson TM-T88V](https://www.epson.com.au/pos/products/receiptprinters/DisplaySpecs.asp?id=tmt88v)
 #'
 #' @param plot Plot to save, defaults to last plot displayed.
+#' @param color color?
 #' @param host_pos hostname or IP address of the ESC/POS compatible network device
 #' @param port port the ESC/POS compatible device is listening on; defaults to `9100L`
 #' @param scale,width,height,units,dpi,bg same as their [ggplot2::ggsave()] counterparts but with
@@ -26,11 +34,12 @@ png_to_raster <- function(png_file) {
 #' @param ... other parameters to pass on to [ggplot2::ggsave()]
 #' @export
 ggpos <- function(plot = ggplot2::last_plot(),
+                  color = FALSE,
                   host_pos,
                   port = 9100L,
                   scale = 2,
-                  width = 280,
-                  height = 280,
+                  width = 256,
+                  height = 256,
                   units = "px",
                   dpi = 144,
                   bg = "white",
@@ -50,7 +59,7 @@ ggpos <- function(plot = ggplot2::last_plot(),
     ...
   )
 
-  res <- png_to_raster(png_file)
+  res <- png_to_raster(png_file, color = color[1])
 
   if (res != "") {
 
