@@ -1,7 +1,7 @@
 Package: ggpos
 Type: Package
 Title: Print {ggplot2} or {grid} Objects to ESC/POS Compatible Network Devices 
-Version: 0.1.1
+Version: 0.2.0
 Date: 2022-03-31
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
@@ -26,7 +26,8 @@ Depends:
 Imports:
     Rcpp,
     stringi,
-    ggplot2
+    ggplot2,
+    magrittr
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 LinkingTo: 

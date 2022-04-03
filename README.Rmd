@@ -31,8 +31,8 @@ I've only tested this on a single, networked EPSON TM-T88V printer.
 
 ## Installation
 
-```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
-hrbrpkghelpr::install_block()
+```{r install-ex, eval = FALSE}
+remotes::install_github("hrbrmstr/ggpos", ref = "batman")
 ```
 
 ## Usage
