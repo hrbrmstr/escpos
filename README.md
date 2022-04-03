@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-71%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-75%25-lightgrey.svg)
 [![R-CMD-check](https://github.com/hrbrmstr/escpos/workflows/R-CMD-check/badge.svg)](https://github.com/hrbrmstr/escpos/actions?query=workflow%3AR-CMD-check)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/escpos.svg?branch=master)](https://travis-ci.org/hrbrmstr/escpos)  
@@ -56,10 +56,11 @@ remotes::install_github("hrbrmstr/escpos", ref = "batman")
 ## Usage
 
 ``` r
-library(ggpos)
+library(escpos)
+library(ggplot2)
 
 # current version
-packageVersion("ggpos")
+packageVersion("escpos")
 ## [1] '0.2.0'
 ```
 
@@ -90,8 +91,8 @@ ggpos(gg, host_pos = HOSTNAME_OR_IP_ADDRESS_OF_YOUR_PRINTER)
 | C/C++ Header |        3 | 0.07 |  629 | 0.04 |         396 | 0.12 |     1374 | 0.22 |
 | R            |        7 | 0.17 |  186 | 0.01 |          47 | 0.01 |      261 | 0.04 |
 | YAML         |        2 | 0.05 |   35 | 0.00 |          10 | 0.00 |        2 | 0.00 |
-| Rmd          |        1 | 0.03 |   21 | 0.00 |          20 | 0.01 |       34 | 0.01 |
-| SUM          |       20 | 0.50 | 8437 | 0.50 |        1706 | 0.50 |     3085 | 0.50 |
+| Rmd          |        1 | 0.03 |   22 | 0.00 |          20 | 0.01 |       34 | 0.01 |
+| SUM          |       20 | 0.50 | 8438 | 0.50 |        1706 | 0.50 |     3085 | 0.50 |
 
 clock Package Metrics for escpos
 

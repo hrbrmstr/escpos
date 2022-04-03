@@ -37,10 +37,11 @@ remotes::install_github("hrbrmstr/escpos", ref = "batman")
 ## Usage
 
 ```{r lib-ex}
-library(ggpos)
+library(escpos)
+library(ggplot2)
 
 # current version
-packageVersion("ggpos")
+packageVersion("escpos")
 
 ```
 
