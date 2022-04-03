@@ -1,22 +1,22 @@
-Package: ggpos
+Package: escpos
 Type: Package
-Title: Print {ggplot2} or {grid} Objects to ESC/POS Compatible Network Devices 
+Title: Print Text, Images, and {ggplot2} or {grid} Objects to ESC/POS Compatible Network Devices
 Version: 0.2.0
 Date: 2022-03-31
 Authors@R: c(
     person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
            comment = c(ORCID = "0000-0001-5670-2640")),
-    person("The", "Working Group", email = "peter@twg.ca", role = "aut",
-           comment = "png2escpos base C code <https://github.com/twg/png2escpos>"
+    person("Petr", "Kutalek", role = "aut",
+           comment = "png2pos base C code <https://github.com/petrkutalek/png2pos>"
     )
   )
 Maintainer: Bob Rudis <bob@rud.is>
 Description: ESC/POS devices, such as receipt printers, have the ability to print their own form of
-    raster bitmap graphics. Tools are provided to turn {ggplot2} or {grid} objects into such raster
-    bitmaps and print them to ESC/POS compatible devices.
-URL: https://github.com/hrbrmstr/ggpos
-BugReports: https://github.com/hrbrmstr/ggpos/issues
-SystemRequirements: libpng
+    raster bitmap graphics as well as text. Tools are provided to turn {ggplot2} or {grid} objects 
+    into such raster bitmaps and print them, along with text and regular impages, to ESC/POS
+    compatible devices.
+URL: https://github.com/hrbrmstr/escpos
+BugReports: https://github.com/hrbrmstr/escpos/issues
 Encoding: UTF-8
 License: MIT + file LICENSE
 Suggests:

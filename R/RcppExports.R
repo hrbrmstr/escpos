@@ -2,7 +2,7 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #' @keywords internal
-png_to_escpos_raster <- function(png_path, raster_path) {
-    .Call(`_ggpos_png_to_escpos_raster`, png_path, raster_path)
+png_to_escpos_raster <- function(png_file, raster_path, color = FALSE) {
+    .Call(`_escpos_png_to_escpos_raster`, png_file, raster_path, color)
 }
 

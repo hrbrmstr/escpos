@@ -11,24 +11,25 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // png_to_escpos_raster
-std::string png_to_escpos_raster(std::string png_path, std::string raster_path);
-RcppExport SEXP _ggpos_png_to_escpos_raster(SEXP png_pathSEXP, SEXP raster_pathSEXP) {
+std::string png_to_escpos_raster(std::string png_file, std::string raster_path, bool color);
+RcppExport SEXP _escpos_png_to_escpos_raster(SEXP png_fileSEXP, SEXP raster_pathSEXP, SEXP colorSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< std::string >::type png_path(png_pathSEXP);
+    Rcpp::traits::input_parameter< std::string >::type png_file(png_fileSEXP);
     Rcpp::traits::input_parameter< std::string >::type raster_path(raster_pathSEXP);
-    rcpp_result_gen = Rcpp::wrap(png_to_escpos_raster(png_path, raster_path));
+    Rcpp::traits::input_parameter< bool >::type color(colorSEXP);
+    rcpp_result_gen = Rcpp::wrap(png_to_escpos_raster(png_file, raster_path, color));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_ggpos_png_to_escpos_raster", (DL_FUNC) &_ggpos_png_to_escpos_raster, 2},
+    {"_escpos_png_to_escpos_raster", (DL_FUNC) &_escpos_png_to_escpos_raster, 3},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_ggpos(DllInfo *dll) {
+RcppExport void R_init_escpos(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }
