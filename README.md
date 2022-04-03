@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-75%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![R-CMD-check](https://github.com/hrbrmstr/escpos/workflows/R-CMD-check/badge.svg)](https://github.com/hrbrmstr/escpos/actions?query=workflow%3AR-CMD-check)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/escpos.svg?branch=master)](https://travis-ci.org/hrbrmstr/escpos)  
