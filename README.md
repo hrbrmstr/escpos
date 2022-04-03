@@ -5,7 +5,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-67%25-lightgrey.svg)
 [![R-CMD-check](https://github.com/hrbrmstr/ggpos/workflows/R-CMD-check/badge.svg)](https://github.com/hrbrmstr/ggpos/actions?query=workflow%3AR-CMD-check)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/ggpos.svg?branch=master)](https://travis-ci.org/hrbrmstr/ggpos)
@@ -30,6 +30,15 @@ ESC/POS compatible devices.
 
 The following functions are implemented:
 
+-   `escpos`: Create an escpos object for accumulating print commands
+-   `pos_cr`: Send a CR to the printer
+-   `pos_cut`: Issue a partial or full cut command to the printer
+-   `pos_ff`: Send a FF to the printer
+-   `pos_ht`: Send a HT to the printer
+-   `pos_lf`: Send a LF to the printer
+-   `pos_plaintext`: Send plaintext to the printer
+-   `pos_print`: Send collected print commands to the printer
+-   `pos_vt`: Send a VT to the printer
 -   `ggpos`: Print a ggplot (or other grid object) to an ESC/POS
     compatible network device with sensible defaults
 
@@ -43,9 +52,6 @@ I’ve only tested this on a single, networked EPSON TM-T88V printer.
 remotes::install_github("hrbrmstr/ggpos", ref = "batman")
 ```
 
-NOTE: To use the ‘remotes’ install options you will need to have the
-[{remotes} package](https://github.com/r-lib/remotes) installed.
-
 ## Usage
 
 ``` r
@@ -53,7 +59,7 @@ library(ggpos)
 
 # current version
 packageVersion("ggpos")
-## [1] '0.1.0'
+## [1] '0.2.0'
 ```
 
 ``` r
@@ -79,12 +85,12 @@ ggpos(gg, host_pos = HOSTNAME_OR_IP_ADDRESS_OF_YOUR_PRINTER)
 
 | Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
 |:-----|---------:|-----:|----:|-----:|------------:|-----:|---------:|-----:|
-| C++  |        2 | 0.10 | 114 | 0.25 |          53 | 0.25 |       36 | 0.06 |
-| R    |        4 | 0.20 |  56 | 0.12 |          19 | 0.09 |       30 | 0.05 |
-| YAML |        2 | 0.10 |  35 | 0.08 |          10 | 0.05 |        2 | 0.00 |
-| Rmd  |        1 | 0.05 |  21 | 0.05 |          21 | 0.10 |       34 | 0.06 |
-| C    |        1 | 0.05 |   0 | 0.00 |           2 | 0.01 |      177 | 0.32 |
-| SUM  |       10 | 0.50 | 226 | 0.50 |         105 | 0.50 |      279 | 0.50 |
+| R    |        7 | 0.27 | 184 | 0.26 |          47 | 0.18 |      254 | 0.25 |
+| C++  |        2 | 0.08 | 114 | 0.16 |          53 | 0.20 |       36 | 0.04 |
+| YAML |        2 | 0.08 |  35 | 0.05 |          10 | 0.04 |        2 | 0.00 |
+| Rmd  |        1 | 0.04 |  21 | 0.03 |          21 | 0.08 |       34 | 0.03 |
+| C    |        1 | 0.04 |   0 | 0.00 |           2 | 0.01 |      177 | 0.18 |
+| SUM  |       13 | 0.50 | 354 | 0.50 |         133 | 0.50 |      503 | 0.50 |
 
 clock Package Metrics for ggpos
 
