@@ -79,8 +79,8 @@ list(
   ),
 
   'inverted' = list(
-    False = as.raw(c(0x1d,0x42,0x00)), # Inverted mode ON
-     True = as.raw(c(0x1d,0x42,0x01))  # Inverted mode OFF
+     'true' = as.raw(c(0x1d,0x42,0x00)), # Inverted mode ON
+    'false' = as.raw(c(0x1d,0x42,0x01))  # Inverted mode OFF
   ),
 
   'color' = list(
