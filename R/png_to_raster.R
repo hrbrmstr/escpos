@@ -84,3 +84,4 @@ ggpos <- function(plot = ggplot2::last_plot(),
   invisible(res)
 
 }
+
