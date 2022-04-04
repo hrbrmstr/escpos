@@ -38,7 +38,6 @@ remotes::install_github("hrbrmstr/escpos", ref = "batman")
 
 ```{r lib-ex}
 library(escpos)
-library(ggplot2)
 
 # current version
 packageVersion("escpos")
@@ -46,25 +45,60 @@ packageVersion("escpos")
 ```
 
 ```{r ex-01, eval = FALSE}
-ggplot(mtcars) +
+library(stringi)
+library(hrbrthemes)
+library(ggplot2)
+
+ggplot() +
   geom_point(
-    aes(wt, mpg)
+    data = mtcars,
+    aes(wt, mpg),
+    color = "red"
   ) +
   labs(
-    title = "Test of {ggpos}"
+    title = "A good title"
   ) +
-  theme_ipsum_es(grid="XY") +
-  theme(
-    panel.grid.major.x = element_line(color = "black"),
-    panel.grid.major.y = element_line(color = "black")
-  ) -> gg
+  theme_ipsum_es(grid="XY") -> gg
 
-ggpos(gg, host_pos = HOSTNAME_OR_IP_ADDRESS_OF_YOUR_PRINTER)
+epson_ip = "HOSTNAME_OR_IP_OF_YOUR_PRINTER"
+
+escpos(epson_ip) |>
+  pos_bold("on") %>%
+  pos_align("center") %>%
+  pos_size("2x") %>%
+  pos_underline("2dot") %>%
+  pos_plaintext("This Is A Title") %>%
+  pos_lf(2) |>
+  pos_underline("off") %>%
+  pos_size("normal") %>%
+  pos_align("left") %>%
+  pos_bold("off") %>%
+  pos_font("b") %>%
+  pos_plaintext(
+    stringi::stri_rand_lipsum(1)
+  ) |>
+  pos_lf(2) |>
+  pos_font("a") %>%
+  pos_plaintext(
+    paste0(capture.output(
+      str(mtcars, width = 40, strict.width = "cut")
+    ), collapse = "\n")
+  ) |>
+  pos_lf(2L) |>
+  pos_plot(gg, color = TRUE) %>%
+  pos_lf(2L) |>
+  pos_font("c") %>%
+  pos_plaintext(
+    stringi::stri_rand_lipsum(1, start_lipsum = FALSE)
+  ) |>
+  pos_lf(3) |>
+  pos_cut() %>%
+  pos_print()
 ```
 
-![](man/figures/IMG_0217.png)
+![](man/figures/escpos-complex.png)
 
-## ggpos Metrics
+## escpos Metrics
 
 ```{r cloc, echo=FALSE}
 cloc::cloc_pkg_md()
