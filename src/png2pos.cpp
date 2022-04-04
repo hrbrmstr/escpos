@@ -1,8 +1,3 @@
-/*
-png2pos is a utility to convert PNG images to ESC/POS format
-(printer control codes and escape sequences) used by POS thermal
-printers.
-*/
 #include <Rcpp.h>
 
 using namespace Rcpp;
