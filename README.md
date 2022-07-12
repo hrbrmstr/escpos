@@ -23,7 +23,7 @@ Compatible Network Devices
 ESC/POS devices, such as receipt printers, have the ability to print
 their own form of raster bitmap graphics as well as text. Tools are
 provided to turn {ggplot2} or {grid} objects into such raster bitmaps
-and print them, along with text and regular impages, to ESC/POS
+and print them, along with text and regular images, to ESC/POS
 compatible devices.
 
 ## What’s Inside The Tin
